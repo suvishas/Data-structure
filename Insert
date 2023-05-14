@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+
+struct node
+{
+	int data;
+	struct node * next;
+}*head=NULL,*p,*t,*newnode;
+
+
+
+void create()
+{
+	int n,i,ele;
+	printf("no of elements in the list");
+	scanf("%d , &n");
+	for(i=0;i<n;i++)
+	{
+		printf("enter the element");
+		scanf("%d,&ele");
+		newnode=(struct node*)malloc(sizeof(struct node));
+        newnode->data=ele;
+		newnode->next=NULL;
+		if(head==NULL)
+		{
+		head=newnode;
+		p=head;
+		}	
+	else
+	{
+		for(p=head;p->next!=NULL;p=p->next);
+		p->next=newnode;
+		p=newnode;
+	}
+}
+}
+
+void insert_at_begin()
+{
+	int ele;
+	printf("enter the elements in the list");
+	scanf("%d",&ele);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	p=head;
+	newnode->next=p;
+	head=newnode;
+	p=newnode;
+}
+
+void display()
+{
+	
+	if(head==NULL)
+	printf("sll is empty");
+	else
+	{
+	
+	for (p=head;p!=NULL;p=p->next)
+	printf("%d\t",p->data);
+	}
+}
+
+
+int main ( )
+{
+	int opt;
+	do
+	{
+		printf ("\n** Main Menu **\n\n" );
+		printf ("1. create\n2. display\n3.Exit\n .insert_at_begin\n4" );
+		printf("InWhich option you want to perform?");
+		scanf ("%d" , &opt);
+		switch(opt)
+		{
+		    case 1:create ();break;
+			case 2:display ( ); break;
+			case 3:exit (0);
+			case 4:insert_at_begin();break;
+			default: printf( "please enter the option between 1 to 4 ");
+		}
+	}while (opt>=1 &&opt<=3);
+}
