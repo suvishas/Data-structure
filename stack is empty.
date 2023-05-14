@@ -1,0 +1,22 @@
+void pop ()
+{
+int ele;
+if (top==-1)
+printf("Stack is empty");
+else
+{
+ele=stk [top]:
+top=top-1:
+printf "The deleted element = %d" ele):
+}
+void peek()
+void display ()
+{
+int i;
+if (top==-1)
+printf("Stack is empty");
+else
+{
+printf ("The elements are\n" );
+for (i=0;i‹=top;i++)
+}
