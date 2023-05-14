@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int a[]={21,45,12,16};
+	int n,i,f=0;
+	int b[]={21,45,12,16,32};
+	if(sizeof(a)!=sizeof(b))
+	  {
+	  	printf("Invalid");
+	  	return 0;
+	  }
+	  
+	else  
+	n=sizeof(a)/sizeof(a[0]);
+	for(i=0;i<n;i++)
+	   if(a[i]!=b[i])
+	     {
+	     	f=1;
+	     	break;
+		 }
+	     
+	if(f==1)
+	  printf("Not");
+	else
+	  printf("yes");     
+	return 0;
+}
