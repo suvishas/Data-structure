@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 5
+int top=-1, STK[MAX];
+void push()
+{
+	int ele;
+	if(top==MAX-1)
+	printf("stack is full:");
+	else
+	{
+		printf("Enter the ele:");
+		scanf("%d",&ele);
+	top=top+1;
+	STK[top]=ele;	
+	}
+}
+void pop()
+{
+	if(top==-1)
+	printf("stack is empty");
+	else
+	top=top-1;
+}
+void peak()
+{
+	if(top==-1)
+	printf("stack is empty");
+	else
+	printf("the top element=%d",STK[top]);
+}
+void display()
+{
+	int i;
+	if(top==-1)
+	printf("stack is empty");
+	else
+	for(i=top;i>=0;i--)
+	printf("%d\n",STK[i]);
+}
+int main()
+{
+	int cho;
+	do{
+		printf("\n main menu\n");
+		printf("\n 1.push");
+		printf("\n 2.pop");
+		printf("\n 3.peak");
+		printf("\n 4.display");
+		printf("\n 5.exit");
+		printf("\n Enter your choice");
+		scanf("%d",&cho);
+		switch(cho)
+		{
+			case 1:push();break;
+			case 2:pop();break;
+			case 3:peak();break;
+			case 4:display();break;
+			case 5:exit(0);break;
+			default:printf("Enter the choice between 1 to 5");
+		}
+	}while(cho>=1 && cho<=5);
+	return 0;
+}
